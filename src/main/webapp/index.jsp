@@ -9,15 +9,25 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+<script>
+    $(function () {
+        $("button").click(function () {
+            $.ajax({
+                url:"test/myTest.do",
+                data:{},
+                success:function (data) {
+                    alert(data.name);
+                }
+            });
+
+        });
+
+    });
+</script>
 <body>
-<p>
-    ${pageContext.request.contextPath}
-</p>
-    <form action="${pageContext.request.contextPath}/test/register.do" method="post">
-        姓名:<input type="text" name="name">
-        年龄:<input type="text" name="age">
-        <input type="submit" name="注册">
-    </form>
+
+    <button>提交请求</button>
 
 </body>
 </html>
